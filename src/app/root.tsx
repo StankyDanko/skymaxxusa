@@ -24,7 +24,7 @@ import './global.css';
 
 // @ts-ignore
 import { LoadFonts } from 'virtual:load-fonts.jsx';
-import fetch from '@/__create/fetch';
+// import fetch from '@/__create/fetch';
 // @ts-ignore
 import { SessionProvider } from '@auth/create/react';
 import { toPng } from 'html-to-image';
@@ -37,7 +37,7 @@ import type { Route } from './+types/root';
 export const links = () => [];
 
 if (globalThis.window && globalThis.window !== undefined) {
-  globalThis.window.fetch = fetch;
+  /  globalThis.window.fetch = fetch;
 }
 
 const LoadFontsSSR = import.meta.env.SSR ? LoadFonts : null;
