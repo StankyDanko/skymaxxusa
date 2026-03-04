@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Anything.xyz leftovers
+__create/
+plugins/
+test/
+___old-*
+src/__create/
+
+# Large binaries that break GitHub
+*.so
+*.so.*
+*.dll
+*.dylib
+build/Release/
+
+# Environment & logs
+.env
+.env.local
+.env.*.local
+*.log
+npm-debug.log*
+
+# Build & cache
+dist/
+build/
+.vite/
+coverage/
+test-results/
+vitest.config.ts.cache
+
+# OS & editor
+.DS_Store
+.vscode/
+.idea/
