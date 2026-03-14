@@ -195,7 +195,7 @@ if (gitStatus) {
 // Step 2: Build
 console.log('2️⃣  Building Docker image...\n');
 try {
-  run(`podman build -t skymaxxusa:latest .`, { timeout: 300_000 });
+  run(`podman build --no-cache -t skymaxxusa:latest .`, { timeout: 300_000 });
 } catch (e) {
   console.error('\n  ❌ Build failed. Fix errors and retry.\n');
   process.exit(1);
