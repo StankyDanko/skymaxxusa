@@ -8,13 +8,15 @@
  */
 
 // ── Brand ────────────────────────────────────────────────────
-export const BRAND_NAME = "SkyMaxxUSA";
-export const BRAND_TAGLINE = "Honest. Secure. American.";
+export const BRAND_NAME = "SkyMaxx USA";
+export const BRAND_TAGLINE = "Secure Communications. Trusted Entertainment.";
+export const BRAND_PARENT = "SouthernSky Cloud Services";
+export const BRAND_PARENT_URL = "https://southernsky.cloud";
 export const FOUNDED_YEAR = 2020;
 
 // ── Contact ──────────────────────────────────────────────────
 export const CONTACT_PHONE = "(800) 555-0199";
-export const CONTACT_EMAIL = "support@skymaxusa.com";
+export const CONTACT_EMAIL = "support@skymaxx.southernsky.cloud";
 export const CONTACT_ADDRESS = "United States of America";
 
 // ── Radio Model ──────────────────────────────────────────────
@@ -102,31 +104,31 @@ export const HARDWARE_INCLUDES_SERVICE_MONTHS = 12;
 // ── SEO Metadata ──────────────────────────────────────────────
 export const SEO = {
   home: {
-    title: "SkyMaxxUSA — Nationwide Secure PTT Radio Service",
+    title: "SkyMaxx USA — Secure Radios & Streaming TV | A SouthernSky Company",
     description:
-      "SkyMaxxUSA sells and manages secure nationwide LTE Push-to-Talk radios. No contracts. No hidden fees. Honest American service. Get yours today.",
+      "SkyMaxx USA offers secure nationwide LTE push-to-talk radios and premium streaming TV. A branch of SouthernSky Cloud Services. No contracts, no hidden fees.",
   },
   shop: {
-    title: `Shop ${RADIO_MODEL_NAME} — SkyMaxxUSA`,
+    title: `Shop ${RADIO_MODEL_NAME} — SkyMaxx USA`,
     description: `Buy the ${RADIO_MODEL_NAME}. One-time hardware purchase includes 1 full year of secure nationwide LTE PTT service. Managed renewals handled by us.`,
   },
   howItWorks: {
-    title: "How It Works — SkyMaxxUSA",
+    title: "How It Works — SkyMaxx USA",
     description:
       "Simple process: Buy your radio, we ship it pre-activated, start talking immediately. We handle all renewals and updates so you never have to worry.",
   },
   about: {
-    title: "About Us — SkyMaxxUSA",
+    title: "About Us — SkyMaxx USA | A SouthernSky Company",
     description:
-      "SkyMaxxUSA was built on old-fashioned values: your word is bond, handshake guaranteed. Privacy, security, and superior service — that's our promise.",
+      "SkyMaxx USA is a branch of SouthernSky Cloud Services, built on old-fashioned values: your word is bond, handshake guaranteed. Secure radios and streaming TV.",
   },
   contact: {
-    title: "Contact SkyMaxxUSA — We're Here When You Need Us",
+    title: "Contact SkyMaxx USA — We're Here When You Need Us",
     description:
       "Real people. Real answers. Reach our team by phone or email and we'll get back to you fast. No bots, no runaround.",
   },
   dashboard: {
-    title: "My Account — SkyMaxxUSA Customer Portal",
-    description: "Manage your radios, view payment history, and renew service.",
+    title: "My Account — SkyMaxx USA Customer Portal",
+    description: "Manage your radios, streaming TV, view payment history, and renew service.",
   },
 };

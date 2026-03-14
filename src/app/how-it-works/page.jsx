@@ -43,7 +43,7 @@ const STEPS = [
 
 export default function HowItWorksPage() {
   return (
-    <div className="min-h-screen bg-[#F8F9FA]">
+    <div className="min-h-screen bg-[#0f172a]">
       <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
@@ -51,7 +51,7 @@ export default function HowItWorksPage() {
       <Navbar />
 
       {/* Header */}
-      <div className="bg-[#1E3A8A] py-11 px-4 text-center">
+      <div className="bg-[#020617] py-11 px-4 text-center">
         <h1 className="text-4xl md:text-5xl font-black text-white mb-3">
           How It Works
         </h1>
@@ -65,7 +65,7 @@ export default function HowItWorksPage() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="relative">
           {/* Vertical connector line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#DC2626] to-[#1E3A8A] opacity-20 hidden md:block" />
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#DC2626] to-[#3b82f6] opacity-30 hidden md:block" />
 
           <div className="space-y-12 md:space-y-0">
             {STEPS.map((step, i) => {
@@ -79,28 +79,28 @@ export default function HowItWorksPage() {
                   }`}
                 >
                   {/* Card */}
-                  <div className="flex-1 bg-white border border-gray-100 rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex-1 bg-[#1e293b] border border-white/10 rounded-2xl p-7 hover:shadow-md transition-shadow">
                     <div className="flex items-center gap-4 mb-3">
-                      <div className="w-11 h-11 bg-[#1E3A8A]/10 rounded-xl flex items-center justify-center">
-                        <Icon size={22} className="text-[#1E3A8A]" />
+                      <div className="w-11 h-11 bg-[#DC2626]/10 rounded-xl flex items-center justify-center">
+                        <Icon size={22} className="text-[#DC2626]" />
                       </div>
-                      <span className="text-[#DC2626] font-black text-3xl opacity-25">
+                      <span className="text-[#DC2626]/30 font-black text-3xl">
                         {step.number}
                       </span>
                     </div>
-                    <h3 className="font-black text-gray-900 text-xl mb-2">
+                    <h3 className="font-black text-white text-xl mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-gray-700 leading-relaxed mb-2">
+                    <p className="text-white/70 leading-relaxed mb-2">
                       {step.description}
                     </p>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                    <p className="text-white/40 text-sm leading-relaxed">
                       {step.detail}
                     </p>
                   </div>
 
                   {/* Center dot */}
-                  <div className="hidden md:flex flex-shrink-0 w-6 h-6 rounded-full bg-[#DC2626] border-4 border-white shadow-md z-10" />
+                  <div className="hidden md:flex flex-shrink-0 w-6 h-6 rounded-full bg-[#DC2626] border-4 border-[#0f172a] shadow-md z-10" />
 
                   {/* Spacer for alternate side */}
                   <div className="flex-1 hidden md:block" />
@@ -112,9 +112,9 @@ export default function HowItWorksPage() {
       </section>
 
       {/* FAQ section */}
-      <section className="bg-gray-50 py-11">
+      <section className="bg-[#0a101f] py-11">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-7 text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-7 text-center">
             Straight Answers to Common Questions
           </h2>
           <div className="space-y-5">
@@ -142,10 +142,10 @@ export default function HowItWorksPage() {
             ].map((faq) => (
               <div
                 key={faq.q}
-                className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm"
+                className="bg-[#1e293b] rounded-xl p-5 border border-white/10"
               >
-                <h4 className="font-bold text-gray-900 mb-1.5">{faq.q}</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                <h4 className="font-bold text-white mb-1.5">{faq.q}</h4>
+                <p className="text-white/60 text-sm leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -153,7 +153,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1E3A8A] py-11 text-center">
+      <section className="bg-[#020617] py-11 text-center">
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-3">
             Simple enough. Let&rsquo;s get you set up.

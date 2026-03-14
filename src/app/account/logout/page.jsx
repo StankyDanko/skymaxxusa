@@ -17,7 +17,7 @@ export default function LogoutPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#1E3A8A] flex flex-col items-center justify-center px-4">
+    <div className="min-h-screen bg-[#020617] flex flex-col items-center justify-center px-4">
       <a href="/" className="flex items-center gap-2 mb-10">
         <Shield size={24} className="text-[#DC2626]" fill="currentColor" />
         <span className="text-[#DC2626] font-extrabold text-2xl">
@@ -25,12 +25,12 @@ export default function LogoutPage() {
         </span>
       </a>
 
-      <div className="w-full max-w-sm bg-white rounded-2xl shadow-2xl p-8 text-center">
-        <LogOut size={36} className="text-gray-400 mx-auto mb-4" />
-        <h1 className="text-xl font-extrabold text-gray-900 mb-2">
+      <div className="w-full max-w-sm bg-[#1e293b] rounded-2xl shadow-2xl p-8 text-center border border-white/10">
+        <LogOut size={36} className="text-white/40 mx-auto mb-4" />
+        <h1 className="text-xl font-extrabold text-white mb-2">
           Signing you out…
         </h1>
-        <p className="text-gray-500 text-sm">
+        <p className="text-white/50 text-sm">
           Thanks for using {BRAND_NAME}. See you next time.
         </p>
       </div>

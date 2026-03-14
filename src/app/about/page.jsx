@@ -33,7 +33,7 @@ const VALUES = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#F8F9FA]">
+    <div className="min-h-screen bg-[#0f172a]">
       <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
@@ -41,9 +41,9 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Header */}
-      <div className="bg-[#1E3A8A] py-11 px-4">
+      <div className="bg-[#020617] py-11 px-4">
         <div className="max-w-4xl mx-auto">
-          <p className="text-white/60 text-sm mb-1">
+          <p className="text-white/50 text-sm mb-1">
             <a href="/" className="hover:text-white transition-colors">
               Home
             </a>{" "}
@@ -59,7 +59,7 @@ export default function AboutPage() {
       </div>
 
       {/* Story Section */}
-      <section className="py-12">
+      <section className="py-12 bg-[#0f172a]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             {/* Image */}
@@ -75,20 +75,20 @@ export default function AboutPage() {
 
             {/* Story copy */}
             <div className="order-1 md:order-2">
-              <div className="inline-flex items-center gap-2 bg-[#1E3A8A]/10 rounded-full px-4 py-1.5 mb-4">
+              <div className="inline-flex items-center gap-2 bg-[#DC2626]/10 rounded-full px-4 py-1.5 mb-4">
                 <Shield
                   size={14}
                   className="text-[#DC2626]"
                   fill="currentColor"
                 />
-                <span className="text-[#1E3A8A] text-xs font-bold uppercase tracking-wider">
+                <span className="text-[#DC2626] text-xs font-bold uppercase tracking-wider">
                   Our Story
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-5 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-5 leading-tight">
                 Built for the men who still believe a handshake means something.
               </h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
+              <div className="space-y-4 text-white/70 leading-relaxed">
                 <p>
                   {BRAND_NAME} was started in {FOUNDED_YEAR} by a family that
                   grew up believing in two things above all else: doing honest
@@ -99,23 +99,25 @@ export default function AboutPage() {
                   was life or death — where you couldn&rsquo;t afford a dropped
                   call, a privacy breach, or a system that quit when you needed
                   it most. He always said the same thing:{" "}
-                  <em className="text-gray-800 font-semibold">
+                  <em className="text-white font-semibold">
                     &ldquo;Give people what you promised, charge a fair price,
                     and stand behind it no matter what.&rdquo;
                   </em>
                 </p>
                 <p>
-                  We built {BRAND_NAME} in his honor and to his standard. Every
-                  radio we ship is a direct reflection of those values. Every
-                  call we answer is a commitment to the man on the other end of
-                  the line.
+                  We built {BRAND_NAME} in his honor and to his standard. Today,
+                  {BRAND_NAME} operates as a branch of SouthernSky Cloud
+                  Services, carrying forward the same principles with the
+                  backing of a larger mission. Every radio we ship is a direct
+                  reflection of those values. Every call we answer is a
+                  commitment to the man on the other end of the line.
                 </p>
                 <p>
                   We&rsquo;re not the biggest radio company in America. We
                   don&rsquo;t want to be. We want to be the most{" "}
-                  <strong>trusted</strong> one.
+                  <strong className="text-white">trusted</strong> one.
                 </p>
-                <p className="font-semibold text-gray-800">
+                <p className="font-semibold text-white">
                   Word is bond. Handshake guaranteed. Privacy and security above
                   all. Superior service isn&rsquo;t a slogan — it&rsquo;s how we
                   do business.
@@ -127,9 +129,9 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="bg-gray-50 py-11">
+      <section className="bg-[#0a101f] py-11">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-7 text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-7 text-center">
             The Values We Were Raised On
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -138,15 +140,15 @@ export default function AboutPage() {
               return (
                 <div
                   key={v.title}
-                  className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                  className="bg-[#1e293b] rounded-2xl p-5 border border-white/10 text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  <div className="w-11 h-11 bg-[#1E3A8A]/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <Icon size={20} className="text-[#1E3A8A]" />
+                  <div className="w-11 h-11 bg-[#DC2626]/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <Icon size={20} className="text-[#DC2626]" />
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-1.5 text-sm">
+                  <h3 className="font-bold text-white mb-1.5 text-sm">
                     {v.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p className="text-white/50 text-sm leading-relaxed">
                     {v.desc}
                   </p>
                 </div>
@@ -157,12 +159,12 @@ export default function AboutPage() {
       </section>
 
       {/* Our Promise */}
-      <section className="py-11 bg-white">
+      <section className="py-11 bg-[#0f172a]">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-5">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-5">
             Our Promise to You
           </h2>
-          <div className="bg-gradient-to-br from-[#1E3A8A] to-[#0f2260] rounded-2xl p-8 text-left">
+          <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-2xl p-8 text-left border border-white/10">
             <p className="text-white/80 text-lg leading-relaxed mb-4">
               &ldquo;If you buy from us, we owe you our absolute best. Not just
               a good product — but real support, real honesty, and the decency
@@ -180,7 +182,7 @@ export default function AboutPage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="bg-[#1E3A8A] py-11 text-center">
+      <section className="bg-[#020617] py-11 text-center">
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-black text-white mb-3">
             Want to talk before you buy? We&rsquo;d welcome the call.

@@ -2,6 +2,8 @@ import { Shield } from "lucide-react";
 import {
   BRAND_NAME,
   BRAND_TAGLINE,
+  BRAND_PARENT,
+  BRAND_PARENT_URL,
   CONTACT_PHONE,
   CONTACT_EMAIL,
   FOUNDED_YEAR,
@@ -24,9 +26,9 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0f2260] text-white">
+    <footer className="bg-[#020617] text-white">
       {/* Top divider accent */}
-      <div className="h-1 bg-gradient-to-r from-[#DC2626] via-white/20 to-[#1E3A8A]" />
+      <div className="h-1 bg-gradient-to-r from-[#DC2626] via-[#3b82f6] to-[#22c55e]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -48,6 +50,18 @@ export default function Footer() {
             <p className="text-white/50 text-xs mt-4">
               100% American Owned &bull; Privacy Guaranteed &bull; Superior
               Service Since {FOUNDED_YEAR}
+            </p>
+            <p className="text-white/40 text-xs mt-2">
+              A{" "}
+              <a
+                href={BRAND_PARENT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#3b82f6] hover:text-[#60a5fa] transition-colors"
+              >
+                {BRAND_PARENT}
+              </a>{" "}
+              Company
             </p>
           </div>
 
@@ -84,8 +98,10 @@ export default function Footer() {
               Reach Us
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-2">
-                <span className="text-[#DC2626] mt-0.5">📞</span>
+              <li className="flex items-start gap-3">
+                <span className="flex items-center justify-center w-6 h-6 rounded bg-white/10 text-[#DC2626] text-xs mt-0.5">
+                  📞
+                </span>
                 <a
                   href={`tel:${CONTACT_PHONE}`}
                   className="text-white/70 hover:text-white text-sm transition-colors"
@@ -93,8 +109,10 @@ export default function Footer() {
                   {CONTACT_PHONE}
                 </a>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[#DC2626] mt-0.5">✉️</span>
+              <li className="flex items-start gap-3">
+                <span className="flex items-center justify-center w-6 h-6 rounded bg-white/10 text-[#DC2626] text-xs mt-0.5">
+                  ✉️
+                </span>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
                   className="text-white/70 hover:text-white text-sm transition-colors"

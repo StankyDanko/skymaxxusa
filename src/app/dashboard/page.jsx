@@ -9,7 +9,6 @@ import {
   Wrench,
   AlertCircle,
   CheckCircle,
-  Clock,
   ChevronRight,
   ArrowRight,
 } from "lucide-react";
@@ -23,11 +22,11 @@ import useUser from "@/utils/useUser";
 // ── Status pill helper ─────────────────────────────────────────
 function StatusPill({ status }) {
   const map = {
-    active: { label: "Active", cls: "bg-green-100 text-green-700" },
-    expired: { label: "Expired", cls: "bg-red-100 text-red-700" },
-    suspended: { label: "Suspended", cls: "bg-yellow-100 text-yellow-700" },
+    active: { label: "Active", cls: "bg-green-900/40 text-green-400" },
+    expired: { label: "Expired", cls: "bg-red-900/40 text-red-400" },
+    suspended: { label: "Suspended", cls: "bg-yellow-900/40 text-yellow-400" },
   };
-  const s = map[status] || { label: status, cls: "bg-gray-100 text-gray-600" };
+  const s = map[status] || { label: status, cls: "bg-white/10 text-white/60" };
   return (
     <span
       className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${s.cls}`}
@@ -127,8 +126,8 @@ export default function DashboardPage() {
 
   if (userLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-gray-400 text-sm">Loading…</div>
+      <div className="min-h-screen bg-[#0f172a] flex items-center justify-center">
+        <div className="text-white/50 text-sm">Loading…</div>
       </div>
     );
   }
@@ -142,14 +141,14 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#0f172a]">
       <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
       />
 
       {/* ── Top bar ── */}
-      <header className="bg-[#1E3A8A] h-14 flex items-center px-4 sm:px-6 shadow-md">
+      <header className="bg-[#020617] h-14 flex items-center px-4 sm:px-6 shadow-md">
         <div className="flex items-center gap-2 flex-1">
           <Shield size={18} className="text-[#DC2626]" fill="currentColor" />
           <a href="/" className="text-[#DC2626] font-extrabold text-lg">
@@ -177,10 +176,10 @@ export default function DashboardPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Greeting */}
         <div className="mb-8">
-          <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900">
+          <h1 className="text-2xl md:text-3xl font-extrabold text-white">
             Welcome back{user.name ? `, ${user.name.split(" ")[0]}` : ""}.
           </h1>
-          <p className="text-gray-500 mt-1">
+          <p className="text-white/50 mt-1">
             Manage your radios, view service status, and renew with one click.
           </p>
         </div>
@@ -188,7 +187,7 @@ export default function DashboardPage() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* ── Sidebar Nav ── */}
           <aside className="lg:w-56 flex-shrink-0">
-            <nav className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <nav className="bg-[#1e293b] rounded-2xl border border-white/10 overflow-hidden">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = activeSection === item.id;
@@ -196,10 +195,10 @@ export default function DashboardPage() {
                   <button
                     key={item.id}
                     onClick={() => setActiveSection(item.id)}
-                    className={`w-full flex items-center gap-3 px-4 py-3.5 text-sm font-semibold transition-colors border-b border-gray-50 last:border-b-0 ${
+                    className={`w-full flex items-center gap-3 px-4 py-3.5 text-sm font-semibold transition-colors border-b border-white/5 last:border-b-0 ${
                       isActive
-                        ? "bg-[#1E3A8A] text-white"
-                        : "text-gray-600 hover:bg-gray-50"
+                        ? "bg-[#DC2626] text-white"
+                        : "text-white/70 hover:bg-white/5"
                     }`}
                   >
                     <Icon size={16} />
@@ -212,7 +211,7 @@ export default function DashboardPage() {
               })}
               <a
                 href="/shop"
-                className="w-full flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-[#DC2626] hover:bg-red-50 transition-colors"
+                className="w-full flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-[#DC2626] hover:bg-[#DC2626]/10 transition-colors"
               >
                 <ArrowRight size={16} />
                 Order Another Radio
@@ -220,13 +219,13 @@ export default function DashboardPage() {
             </nav>
 
             {/* Quick support */}
-            <div className="mt-4 bg-[#1E3A8A]/5 border border-[#1E3A8A]/10 rounded-2xl p-4 text-center">
-              <p className="text-xs text-gray-500 mb-2 font-medium">
+            <div className="mt-4 bg-[#1e293b] border border-white/10 rounded-2xl p-4 text-center">
+              <p className="text-xs text-white/50 mb-2 font-medium">
                 Need help?
               </p>
               <a
                 href="/contact"
-                className="text-[#1E3A8A] text-sm font-bold hover:underline"
+                className="text-[#DC2626] text-sm font-bold hover:underline"
               >
                 Contact Support
               </a>
@@ -238,27 +237,27 @@ export default function DashboardPage() {
             {/* ─────── MY RADIOS ─────── */}
             {activeSection === "radios" && (
               <div>
-                <h2 className="text-xl font-extrabold text-gray-900 mb-5 flex items-center gap-2">
-                  <Radio size={20} className="text-[#1E3A8A]" />
+                <h2 className="text-xl font-extrabold text-white mb-5 flex items-center gap-2">
+                  <Radio size={20} className="text-[#DC2626]" />
                   My Radios
                 </h2>
 
                 {radiosLoading ? (
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-12 text-center text-gray-400 text-sm">
+                  <div className="bg-[#1e293b] rounded-2xl border border-white/10 p-12 text-center text-white/50 text-sm">
                     Loading your radios…
                   </div>
                 ) : radiosError ? (
-                  <div className="bg-red-50 border border-red-200 rounded-2xl p-6 flex items-center gap-3 text-red-700 text-sm">
+                  <div className="bg-red-900/30 border border-red-500/30 rounded-2xl p-6 flex items-center gap-3 text-red-400 text-sm">
                     <AlertCircle size={18} />
                     {radiosError}
                   </div>
                 ) : radios.length === 0 ? (
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-12 text-center">
-                    <Radio size={40} className="text-gray-200 mx-auto mb-4" />
-                    <p className="text-gray-500 text-sm font-medium mb-1">
+                  <div className="bg-[#1e293b] rounded-2xl border border-white/10 p-12 text-center">
+                    <Radio size={40} className="text-white/20 mx-auto mb-4" />
+                    <p className="text-white/70 text-sm font-medium mb-1">
                       No radios registered yet
                     </p>
-                    <p className="text-gray-400 text-xs mb-5">
+                    <p className="text-white/50 text-xs mb-5">
                       Once you order a radio, it will appear here automatically.
                     </p>
                     <a
@@ -278,25 +277,25 @@ export default function DashboardPage() {
                       return (
                         <div
                           key={radio.id}
-                          className={`bg-white rounded-2xl shadow-sm border p-6 ${
+                          className={`bg-[#1e293b] rounded-2xl border p-6 ${
                             isExpired
-                              ? "border-red-200"
+                              ? "border-red-500/30"
                               : expiringSoon
-                                ? "border-yellow-200"
-                                : "border-gray-100"
+                                ? "border-yellow-500/30"
+                                : "border-white/10"
                           }`}
                         >
                           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                             <div className="flex-1">
                               <div className="flex items-center gap-3 mb-2">
-                                <div className="w-10 h-10 bg-[#1E3A8A]/10 rounded-xl flex items-center justify-center">
-                                  <Radio size={18} className="text-[#1E3A8A]" />
+                                <div className="w-10 h-10 bg-[#DC2626]/10 rounded-xl flex items-center justify-center">
+                                  <Radio size={18} className="text-[#DC2626]" />
                                 </div>
                                 <div>
-                                  <h3 className="font-bold text-gray-900 text-sm">
+                                  <h3 className="font-bold text-white text-sm">
                                     {radio.nickname || radio.model_name}
                                   </h3>
-                                  <p className="text-gray-400 text-xs">
+                                  <p className="text-white/50 text-xs">
                                     SN: {radio.serial_number}
                                   </p>
                                 </div>
@@ -305,10 +304,10 @@ export default function DashboardPage() {
 
                               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
                                 <div>
-                                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-0.5">
+                                  <p className="text-xs text-white/50 font-medium uppercase tracking-wider mb-0.5">
                                     Service Start
                                   </p>
-                                  <p className="text-gray-900 text-sm font-semibold">
+                                  <p className="text-white text-sm font-semibold">
                                     {new Date(
                                       radio.service_start_date,
                                     ).toLocaleDateString("en-US", {
@@ -319,11 +318,11 @@ export default function DashboardPage() {
                                   </p>
                                 </div>
                                 <div>
-                                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-0.5">
+                                  <p className="text-xs text-white/50 font-medium uppercase tracking-wider mb-0.5">
                                     Service Ends
                                   </p>
                                   <p
-                                    className={`text-sm font-semibold ${isExpired ? "text-red-600" : expiringSoon ? "text-yellow-600" : "text-gray-900"}`}
+                                    className={`text-sm font-semibold ${isExpired ? "text-red-400" : expiringSoon ? "text-yellow-400" : "text-white"}`}
                                   >
                                     {new Date(
                                       radio.service_end_date,
@@ -335,10 +334,10 @@ export default function DashboardPage() {
                                   </p>
                                 </div>
                                 <div>
-                                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-0.5">
+                                  <p className="text-xs text-white/50 font-medium uppercase tracking-wider mb-0.5">
                                     Firmware
                                   </p>
-                                  <p className="text-gray-900 text-sm font-semibold">
+                                  <p className="text-white text-sm font-semibold">
                                     v{radio.firmware_version}
                                   </p>
                                 </div>
@@ -346,7 +345,7 @@ export default function DashboardPage() {
 
                               {(expiringSoon || isExpired) && (
                                 <div
-                                  className={`mt-3 flex items-center gap-2 text-xs font-medium ${isExpired ? "text-red-600" : "text-yellow-600"}`}
+                                  className={`mt-3 flex items-center gap-2 text-xs font-medium ${isExpired ? "text-red-400" : "text-yellow-400"}`}
                                 >
                                   <AlertCircle size={13} />
                                   {isExpired
@@ -363,7 +362,7 @@ export default function DashboardPage() {
                                 className={`flex items-center gap-2 px-5 py-2.5 font-bold text-sm rounded-xl transition-colors ${
                                   isExpired
                                     ? "bg-[#DC2626] hover:bg-[#b91c1c] text-white"
-                                    : "bg-[#1E3A8A] hover:bg-[#163069] text-white"
+                                    : "bg-[#DC2626] hover:bg-[#b91c1c] text-white"
                                 } disabled:opacity-60`}
                               >
                                 <RefreshCw size={14} />
@@ -384,49 +383,49 @@ export default function DashboardPage() {
             {/* ─────── PAYMENT HISTORY ─────── */}
             {activeSection === "payments" && (
               <div>
-                <h2 className="text-xl font-extrabold text-gray-900 mb-5 flex items-center gap-2">
-                  <CreditCard size={20} className="text-[#1E3A8A]" />
+                <h2 className="text-xl font-extrabold text-white mb-5 flex items-center gap-2">
+                  <CreditCard size={20} className="text-[#DC2626]" />
                   Payment History
                 </h2>
 
                 {paymentsLoading ? (
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-12 text-center text-gray-400 text-sm">
+                  <div className="bg-[#1e293b] rounded-2xl border border-white/10 p-12 text-center text-white/50 text-sm">
                     Loading your payment history…
                   </div>
                 ) : paymentsError ? (
-                  <div className="bg-red-50 border border-red-200 rounded-2xl p-6 flex items-center gap-3 text-red-700 text-sm">
+                  <div className="bg-red-900/30 border border-red-500/30 rounded-2xl p-6 flex items-center gap-3 text-red-400 text-sm">
                     <AlertCircle size={18} />
                     {paymentsError}
                   </div>
                 ) : payments.length === 0 ? (
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-12 text-center">
+                  <div className="bg-[#1e293b] rounded-2xl border border-white/10 p-12 text-center">
                     <CreditCard
                       size={40}
-                      className="text-gray-200 mx-auto mb-4"
+                      className="text-white/20 mx-auto mb-4"
                     />
-                    <p className="text-gray-500 text-sm font-medium">
+                    <p className="text-white/70 text-sm font-medium">
                       No payments on record yet
                     </p>
-                    <p className="text-gray-400 text-xs mt-1">
+                    <p className="text-white/50 text-xs mt-1">
                       Your purchase history will appear here.
                     </p>
                   </div>
                 ) : (
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                  <div className="bg-[#1e293b] rounded-2xl border border-white/10 overflow-hidden">
                     <div className="overflow-x-auto">
                       <table className="w-full text-sm">
                         <thead>
-                          <tr className="bg-gray-50 border-b border-gray-100">
-                            <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                          <tr className="bg-[#0f172a] border-b border-white/10">
+                            <th className="text-left px-5 py-3 text-xs font-semibold text-white/50 uppercase tracking-wider">
                               Date
                             </th>
-                            <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                            <th className="text-left px-5 py-3 text-xs font-semibold text-white/50 uppercase tracking-wider">
                               Description
                             </th>
-                            <th className="text-right px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                            <th className="text-right px-5 py-3 text-xs font-semibold text-white/50 uppercase tracking-wider">
                               Amount
                             </th>
-                            <th className="text-right px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                            <th className="text-right px-5 py-3 text-xs font-semibold text-white/50 uppercase tracking-wider">
                               Status
                             </th>
                           </tr>
@@ -435,9 +434,9 @@ export default function DashboardPage() {
                           {payments.map((p, i) => (
                             <tr
                               key={p.id}
-                              className={`border-b border-gray-50 last:border-b-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}`}
+                              className={`border-b border-white/5 last:border-b-0 ${i % 2 === 0 ? "bg-[#1e293b]" : "bg-[#1a2536]"}`}
                             >
-                              <td className="px-5 py-4 text-gray-500 whitespace-nowrap">
+                              <td className="px-5 py-4 text-white/50 whitespace-nowrap">
                                 {new Date(p.created_at).toLocaleDateString(
                                   "en-US",
                                   {
@@ -447,23 +446,23 @@ export default function DashboardPage() {
                                   },
                                 )}
                               </td>
-                              <td className="px-5 py-4 text-gray-700 font-medium">
+                              <td className="px-5 py-4 text-white/70 font-medium">
                                 {p.description ||
                                   (p.order_type === "hardware"
                                     ? `${RADIO_MODEL_NAME} — Hardware Purchase`
                                     : `${RADIO_MODEL_NAME} — Service Renewal`)}
                               </td>
-                              <td className="px-5 py-4 text-gray-900 font-bold text-right whitespace-nowrap">
+                              <td className="px-5 py-4 text-white font-bold text-right whitespace-nowrap">
                                 ${(p.amount_cents / 100).toFixed(2)}
                               </td>
                               <td className="px-5 py-4 text-right">
                                 <span
                                   className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
                                     p.status === "succeeded"
-                                      ? "bg-green-100 text-green-700"
+                                      ? "bg-green-900/40 text-green-400"
                                       : p.status === "pending"
-                                        ? "bg-yellow-100 text-yellow-700"
-                                        : "bg-red-100 text-red-700"
+                                        ? "bg-yellow-900/40 text-yellow-400"
+                                        : "bg-red-900/40 text-red-400"
                                   }`}
                                 >
                                   {p.status === "succeeded"
@@ -486,12 +485,12 @@ export default function DashboardPage() {
             {/* ─────── DEVICE MANAGEMENT (Coming Soon) ─────── */}
             {activeSection === "management" && (
               <div>
-                <h2 className="text-xl font-extrabold text-gray-900 mb-5 flex items-center gap-2">
-                  <Wrench size={20} className="text-[#1E3A8A]" />
+                <h2 className="text-xl font-extrabold text-white mb-5 flex items-center gap-2">
+                  <Wrench size={20} className="text-[#DC2626]" />
                   Device Update & Management Tool
                 </h2>
 
-                <div className="bg-gradient-to-br from-[#1E3A8A] to-[#0f2260] rounded-2xl p-8 md:p-12 text-center">
+                <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-2xl p-8 md:p-12 text-center border border-white/10">
                   <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <Wrench size={32} className="text-white" />
                   </div>
