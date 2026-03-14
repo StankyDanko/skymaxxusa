@@ -2,11 +2,8 @@
 node_modules/
 
 # Anything.xyz leftovers
-__create/
-plugins/
 test/
 ___old-*
-src/__create/
 
 # Large binaries that break GitHub
 *.so

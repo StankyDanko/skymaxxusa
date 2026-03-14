@@ -36,9 +36,7 @@ import type { Route } from './+types/root';
 
 export const links = () => [];
 
-if (globalThis.window && globalThis.window !== undefined) {
-  /  globalThis.window.fetch = fetch;
-}
+// Sandbox fetch override removed for production build
 
 const LoadFontsSSR = import.meta.env.SSR ? LoadFonts : null;
 if (import.meta.hot) {
