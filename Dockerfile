@@ -11,6 +11,7 @@ COPY --from=build /app/build ./build
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/package.json ./package.json
 ENV NODE_ENV=production
+ENV HOST=0.0.0.0
 ENV PORT=3000
 EXPOSE 3000
-CMD ["npm", "run", "start"]
+CMD ["node", "build/server/index.js"]
