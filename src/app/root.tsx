@@ -34,7 +34,10 @@ import { Toaster, toast } from 'sonner';
 //import { useDevServerHeartbeat } from '../__create/useDevServerHeartbeat';
 import type { Route } from './+types/root';
 
-export const links = () => [];
+export const links = () => [
+  { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+  { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+];
 
 // Sandbox fetch override removed for production build
 

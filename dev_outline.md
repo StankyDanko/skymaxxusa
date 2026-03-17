@@ -50,7 +50,7 @@ SkyMaxx USA is a branch of SouthernSky that offers two core services:
 ### Public Pages
 - **Home** — Hero with both services, benefits grid, testimonials, CTAs
 - **Radios** (was Shop) — SkyMaxx Pro LTE product page with purchase flow
-- **Streaming TV** — Service overview, channel packages, pricing (future build-out)
+- **Streaming TV** (`/streaming`) — Full landing page: hero, features, how-it-works, CTAs (pricing TBD)
 - **How It Works** — Step-by-step for radio purchase + TV setup
 - **About** — Company story, values, SouthernSky connection
 - **Contact** — Form, phone, email, business hours
@@ -75,22 +75,25 @@ SkyMaxx USA is a branch of SouthernSky that offers two core services:
 - **Port:** 4000 → 3000
 - **Server:** Reliable VPS (104.243.45.247)
 - **Reverse proxy:** Caddy (auto TLS)
-- **Deploy script:** `deploy.mjs` (to be created, matching SouthernSky/OMNI pattern)
+- **Deploy script:** `deploy.mjs` (created 2026-03-14, uses podman build --no-cache)
 
 ## Development Priorities
 
-### Phase 1 — Visual Redesign (Current)
+### Phase 1 — Visual Redesign [COMPLETE 2026-03-14]
 - [x] Push checkpoint commit
-- [ ] Update siteConfig.js with new brand identity + Streaming TV service
-- [ ] Redesign all pages to dark slate theme matching SouthernSky
-- [ ] Add "A SouthernSky Company" footer branding
-- [ ] Add Streaming TV as second service on homepage
-- [ ] Update SouthernSky homepage cards for brand cohesion
+- [x] Update siteConfig.js with new brand identity + Streaming TV service
+- [x] Redesign all pages to dark slate theme matching SouthernSky
+- [x] Add "A SouthernSky Company" footer branding
+- [x] Add Streaming TV as second service on homepage
+- [x] Update SouthernSky homepage cards for brand cohesion
+- [x] Create deploy.mjs matching SouthernSky/OMNI pattern
+- [x] Deploy to production at https://skymaxx.southernsky.cloud
 
-### Phase 2 — Streaming TV Service Page
-- [ ] Create dedicated Streaming TV page with channel packages
-- [ ] Add pricing tiers for TV service
-- [ ] Update navigation to include TV page
+### Phase 2 — Streaming TV Page [COMPLETE 2026-03-14]
+- [x] Create dedicated Streaming TV landing page at /streaming
+- [x] Hero, features grid, how-it-works, trust bar, CTAs
+- [ ] Add pricing tiers for TV service (when pricing is finalized)
+- [ ] Add navigation link to /streaming in Navbar
 
 ### Phase 3 — Enhanced Customer Portal
 - [ ] Mock up account settings page
@@ -99,7 +102,7 @@ SkyMaxx USA is a branch of SouthernSky that offers two core services:
 - [ ] Notification preferences
 
 ### Phase 4 — Backend & Production
-- [ ] Create deploy.mjs matching SouthernSky/OMNI pattern
+- [x] Create deploy.mjs matching SouthernSky/OMNI pattern
 - [ ] Wire Stripe for TV service subscriptions
 - [ ] Connect Supabase for enhanced auth/data
 - [ ] Zoho Mail integration for support@skymaxx.southernsky.cloud

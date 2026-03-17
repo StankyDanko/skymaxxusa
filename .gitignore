@@ -31,3 +31,6 @@ vitest.config.ts.cache
 .DS_Store
 .vscode/
 .idea/
+
+# Serena MCP
+.serena/
